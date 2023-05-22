@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for vehicle in vehicles %}
+
+        <a href="{% url 'vehicle engines' vehicle.model_id %}"><div style="float: left;padding: 20px;">
+                <div class="card" style="width: 18rem;padding-left: 10px;">
+                    <img src="{{ vehicle.model.image_url }}" style="width:347px;height:300px;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ vehicle.model }} | Year: {{ vehicle.model.production_date.year }}</h5>
+                    </div>
+                </div>
+            </div></a>
+
+    {% endfor %}
+{% endblock %}

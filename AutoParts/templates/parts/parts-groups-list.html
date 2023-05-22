@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="row justify-content-center" style="color:red;">Parts:</h1>
+    {% for part in parts %}
+
+        <a href="{% url 'parts list' engine_id part.id %}"><div style="float: left;padding: 20px;">
+                <div class="card" style="width: 18rem;padding-left: 10px;">
+                    <img src="{{ part.picture }}" style="width:347px;height:300px;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ part.name }}</h5>
+                    </div>
+                </div>
+            </div></a>
+
+
+    {% endfor %}
+{% endblock %}

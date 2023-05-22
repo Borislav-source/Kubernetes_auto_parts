@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <h1 class="row justify-content-center" style="color: red">Automotive manufacturers</h1>
+    <br>
+    <br>
+{#    {% if manufactureres %}#}
+        {% for manufacturer in manufacturers %}
+
+            <section class="row justify-content-center" style="float: left;padding: 20px;">
+                <section class="row">
+                    <section class="col-12 col-sm-6 col-md-3">
+                        <a class="form-container"
+                           href="{% url 'car models' manufacturer.id type %}">
+                            <img class="card-img-top" style="width:100px;height:80px;"
+                                 src="{{ manufacturer.image.url }}" alt="">
+
+                        </a>
+                    </section>
+
+                </section>
+
+            </section>
+
+
+        {% endfor %}
+{#    {% endif %}#}
+{% endblock %}

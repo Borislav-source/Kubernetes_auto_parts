@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <section class="container-fluid bg">
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <form class="form-container" action="{% url 'sign in' %}" method="post">
+                    {% csrf_token %}
+                    <h1 class="row justify-content-center">Sing in</h1>
+                    <p>If you have not created an account yet,
+                    then please <a href="{% url 'sign up' %}">sign up</a> first!</p>
+                        {{ form }} <p></p>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </section>
+
+        </section>
+
+    </section>
+
+{% endblock %}

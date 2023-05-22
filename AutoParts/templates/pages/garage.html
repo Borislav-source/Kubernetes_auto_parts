@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="form-container">
+        <img src="{{ car.model.image_url }}" alt=""><br>
+        Manufacturer: {{ car.manufacturer }}<br>
+        Model: {{ car.model.name }}<br>
+        Engine: {{ car.model.engine }} | {{ car.model.engine.engine_code }} | {{ car.model.engine.power }}<br>
+        Year: {{ car.model.production_date.year }}
+        <th>
+            <a style="float:right; margin:5px;" class="btn btn-success" href="{% url 'parts groups list' car.model.engine_id  %}">Go to products</a>
+        </th>
+    </div>
+{% endblock %}

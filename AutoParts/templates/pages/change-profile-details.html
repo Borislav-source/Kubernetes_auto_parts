@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <h1 class="row justify-content-center" style="color: red;">Change Profile Details</h1>
+
+    <section class="container-fluid bg">
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <form class="form-container" action="{% url 'change profile' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button>Change</button>
+                </form>
+            </section>
+
+        </section>
+
+    </section>
+{% endblock %}

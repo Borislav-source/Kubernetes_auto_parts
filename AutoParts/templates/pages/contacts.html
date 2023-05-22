@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="form-container">
+        Phone: {{ information.phone }}<br>
+        Email: {{ information.email }}<br>
+        Address: {{ information.address }}<br>
+        Facebook: {{ information.facebook }}
+    </div>
+
+{% endblock %}

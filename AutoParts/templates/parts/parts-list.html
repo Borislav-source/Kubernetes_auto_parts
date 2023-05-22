@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for product in enrollments %}
+        {#                    <li class="row justify-content-center" style="width: 50%;padding: 20px;border: 2px solid grey;">#}
+        {#                        <img style="width: 150px;height: 40px;" src="{{ part.logo }}" alt=""> | Manufacturer: {{ part.part_manufacturer }} | Engine: {{ part.engine }}#}
+        {#            </li>#}
+        <div class="row" style="padding-bottom: 15px;">
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{ product.logo }}">
+                <div class="box-element product">
+                    <h6><strong>{{ product.part }}</strong></h6>
+                    <hr>
+
+                    <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="#">View</a>
+                    <h4 style="display: inline-block; float: right"><strong>${{ product.price }}</strong></h4>
+
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock %}
