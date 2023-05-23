@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auto-parts-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: app1
+  template:
+    metadata:
+      labels:
+        component: app1
+    spec:
+      containers:
+        - name: auto-parts
+          image: abadoom/auto-parts
+          ports:
+            - containerPort: 8000
